@@ -20,11 +20,10 @@ exports.handler = async function (event, context) {
     });
     const found = allClasses?.find((c) => c.inicio_aforo === "21:00" && c.cupos > c.reservas);
     if (found) {
-      // const reserva = await apiClient("/logica/inscritos_nuevo.php", {
-      //   id_clase: found.id_clase,
-      //   codigo_sucursal: "00000011",
-      // });
-      const reserva = { resultado: "testing..." };
+      const reserva = await apiClient("/logica/inscritos_nuevo.php", {
+        id_clase: found.id_clase,
+        codigo_sucursal: "00000011",
+      });
       if (reserva.resultado) {
         const parseDate = new Date(found.start.replace(/\ /g, "T"));
         const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
