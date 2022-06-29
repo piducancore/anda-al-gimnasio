@@ -7,6 +7,7 @@ exports.handler = async function (event, context) {
     password: process.env.API_PASS,
     ref: "reservar.php",
   });
+  console.log({ now: new Date().toISOString() });
   if (login.resultado) {
     const allClasses = await apiClient("/logica/inscritos_listar_clases.php", {
       start: new Date(new Date().setHours(0, 0, 0, 0)).toISOString(),

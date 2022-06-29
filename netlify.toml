@@ -1,0 +1,2 @@
+[functions."reservar"]
+schedule = "35 23 * * *" # everyday at 00:01 UTC (20:01 UTC-4)
