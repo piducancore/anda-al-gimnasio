@@ -1,2 +1,5 @@
+[build]
+environment = { AWS_LAMBDA_JS_RUNTIME = "nodejs18.x", NODE_VERSION = "18" }
+
 [functions."reservar"]
 schedule = "0 1 * * *" # everyday at 01:00 UTC (21:00 UTC-4)
