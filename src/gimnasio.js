@@ -1,8 +1,10 @@
-const fetchCookie = require("fetch-cookie")(fetch);
+const nodeFetch = require("node-fetch");
+const fetchCookie = require("fetch-cookie");
+const fetch = fetchCookie(nodeFetch);
 
 exports.apiClient = async function (endpoint, params) {
   console.log({ endpoint, params });
-  const response = await fetchCookie("https://alumnossportlifezonasur.mastererp.cl" + endpoint, {
+  const response = await fetch("https://alumnossportlifezonasur.mastererp.cl" + endpoint, {
     method: "POST",
     headers: {
       "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
